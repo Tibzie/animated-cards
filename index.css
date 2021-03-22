@@ -1,0 +1,78 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&family=Source+Sans+Pro&display=swap");
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: azure;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#card-container {
+  height: 100vh;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-column-gap: 100px;
+          column-gap: 100px;
+}
+
+#card-cover {
+  width: 100%;
+  height: auto;
+  position: relative;
+}
+
+#card-cover img {
+  width: 300px;
+  height: auto;
+}
+
+#card-cover:hover {
+  cursor: pointer;
+}
+
+#card {
+  position: absolute;
+  width: auto;
+  bottom: 4px;
+  left: 0;
+  padding: 20px;
+  background-color: rgba(225, 225, 225, 0.8);
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+  display: none;
+}
+
+#card .card-title {
+  font-family: "Roboto Condensed", sans-serif;
+  margin-bottom: 15px;
+  font-size: 1.5rem;
+  color: #2e2e2e;
+}
+
+#card .card-description {
+  font-family: "Source Sans Pro", sans-serif;
+  color: #404040;
+}
+
+#card-cover:hover > #card {
+  display: block;
+}
+/*# sourceMappingURL=index.css.map */

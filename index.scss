@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&family=Source+Sans+Pro&display=swap');
+
+$body-font: 'Source Sans Pro',
+sans-serif;
+$title-font: 'Roboto Condensed',
+sans-serif;
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-color: azure;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+#card-container {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    // row-gap: 10px;
+    column-gap: 100px;
+    // border: 1px solid black;
+}
+#card-cover {
+    width: 100%;
+    height: auto;
+    img {
+        width: 300px;
+        height: auto;
+    }
+    position: relative;
+    &:hover {
+        cursor: pointer;
+    }
+}
+#card {
+    position: absolute;
+    width: auto;
+    bottom: 4px;
+    left: 0;
+    padding: 20px;
+    background-color: rgba(225,225,225, 0.8);
+    backdrop-filter: blur(5px);
+    display: none;
+    .card-title {
+        font-family: $title-font;
+        margin-bottom: 15px;
+        font-size: 1.5rem;
+        color: #2e2e2e;
+    }
+    .card-description {
+        font-family: $body-font;
+        color: #404040;
+    }
+}
+#card-cover:hover > #card {
+    display: block;
+}
