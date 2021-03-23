@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&family=Source+Sans+Pro&display=swap');
 
+@import './animations';
+
 $body-font: 'Source Sans Pro',
 sans-serif;
 $title-font: 'Roboto Condensed',
@@ -9,56 +11,63 @@ sans-serif;
     box-sizing: border-box;
     padding: 0;
     margin: 0;
+    
+}
+html {
+    // scroll-snap-type: y proximity;
+    scroll-snap-type: y mandatory;
+}
+body {
+    background-color: #ecf1f2;
+    width: 100%;
 }
 
-body {
-    background-color: azure;
-    display: flex;
-    width: 100%;
-    align-items: center;
-    justify-content: center;
-}
 #card-container {
     height: 100vh;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: auto auto auto auto;
+    justify-content: center;
     align-items: center;
-    // row-gap: 10px;
-    column-gap: 100px;
-    // border: 1px solid black;
+    column-gap: 50px;
+    scroll-snap-align: start;
+}
+#card-zoom {
+    img {
+        width: 250px;
+        height: 400px;
+    }    
 }
 #card-cover {
     width: 100%;
-    height: auto;
-    img {
-        width: 300px;
-        height: auto;
-    }
+    height: 400px;
     position: relative;
+    box-shadow: 5px 5px 5px 0 rgba(64,64,64, 0.3);
+    img {
+        width: 250px;
+        height: 400px;
+    }
+
     &:hover {
         cursor: pointer;
     }
 }
 #card {
     position: absolute;
-    width: auto;
-    bottom: 4px;
-    left: 0;
     padding: 20px;
-    background-color: rgba(225,225,225, 0.8);
+    background-color: rgba(225, 225, 225, 0.8);
     backdrop-filter: blur(5px);
-    display: none;
+    opacity: 0;
+    transition: 300ms ease-in;
+    width: 250px;
     .card-title {
         font-family: $title-font;
         margin-bottom: 15px;
         font-size: 1.5rem;
         color: #2e2e2e;
     }
+
     .card-description {
         font-family: $body-font;
         color: #404040;
     }
-}
-#card-cover:hover > #card {
-    display: block;
 }

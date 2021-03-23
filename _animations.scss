@@ -1,0 +1,44 @@
+
+/* from TOP to BOTTOM */
+.first-card {
+    bottom: 50px;
+    left: 0;
+}
+
+#card-cover:hover>.first-card {
+    opacity: 1;
+    transform: translateY(50px);
+}
+
+/* from LEFT to RIGHT */
+.second-card {
+    left: -50px;
+    bottom: 0;
+}
+
+#card-cover:hover>.second-card {
+    opacity: 1;
+    transform: translateX(50px);
+}
+
+/* from BOTTOM to TOP */
+.third-card {
+    bottom: -50px;
+    left: 0;
+}
+
+#card-cover:hover>.third-card {
+    opacity: 1;
+    transform: translateY(-50px);
+}
+
+/* from RIGHT to LEFT */
+.fourth-card {
+    right: -50px;
+    bottom: 0;
+}
+
+#card-cover:hover>.fourth-card {
+    opacity: 1;
+    transform: translateX(-50px);
+}
