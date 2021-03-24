@@ -14,4 +14,5 @@ Bear in mind, that accoding to https://developer.mozilla.org/,
 ```
 scroll-snap-type: y
 ```
-is deprecated. However, some browsers may still support it (It works for me on Chrome...)
+is deprecated. However, some browsers may still support it  
+**It works for me on Chrome...**
