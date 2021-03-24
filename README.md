@@ -1,7 +1,6 @@
 ﻿# animated-cards
 
-On-hover cards to use with different animation (animation directions, zoom animation) + scroll behaviour + 90deg navigation.  
-I commented out the "lazy" scrolling behaviour setting. It's there if "aggressive" one does not fit anyone's need.
+On-hover cards to use with different animation (animation directions, zoom animation) + scroll behaviour & scroll-snap-type + 90degree navigation.  
 
 This bit below is commented out. (it's there to use tho)
 ```
