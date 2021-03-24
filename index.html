@@ -20,12 +20,18 @@
 
         Photo by <a href="https://unsplash.com/@mathildelangevin?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Mathilde Langevin</a> on <a href="/t/color-theory?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
         Photo by <a href="https://unsplash.com/@p_kuzovkova?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Polina Kuzovkova</a> on <a href="/t/color-theory?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
-  
     -->
 </head>
 
 <body>
-    <div id="card-container">
+    <nav>
+        <ul>
+            <a href="#card-container1"><li>Animation angles</li></a>
+            <a href="#card-container2"><li>Zoom effect</li></a>
+        </ul>
+    </nav>
+    <section id="card-container1" class="card-container">
+        <div class="card-header-first card-header">Different Animations from different angles</div>
         <div id="card-cover"><img src="./img/lucrezia-carnelos-1JKQZQulHj0-unsplash.jpg" alt="person">
             <div id="card" class="first-card">
                 <div class="card-title">
@@ -73,13 +79,21 @@
                 </div>
             </div>
         </div>
-    </div>
+    </section>
     
-    <div id="card-container">
+    <section id="card-container2" class="card-container">
+        <div class="card-header-second card-header">Zoom in</div>
+        <div class="card-header-second card-header">Zoom out</div>
+
+        <div id="card-container-row">
         <div id="card-zoom">
             <img src="./img/mathilde-langevin-ZHYJlrg4h9I-unsplash.jpg" alt="parfume">
         </div>
+        <div id="card-zoom">
+            <img src="./img/polina-kuzovkova-mV3jprx0Hs8-unsplash.jpg" alt="beach">
+        </div>
     </div>
+    </section>
 </body>
 
 </html>

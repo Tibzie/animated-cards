@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&family=Source+Sans+Pro&display=swap');
 
-@import './animations';
+@import './animations', './mixins';
 
 $body-font: 'Source Sans Pro',
 sans-serif;
@@ -14,28 +14,70 @@ sans-serif;
     
 }
 html {
-    // scroll-snap-type: y proximity;
-    scroll-snap-type: y mandatory;
+    // scroll-snap-type: y proximity; // lazy scroll
+    scroll-behavior: smooth;
+    scroll-snap-type: y mandatory; // aggressive scroll
 }
 body {
     background-color: #ecf1f2;
     width: 100%;
 }
-
-#card-container {
+nav {
+    ul {
+        bottom: 50%;
+        left: -40px;
+        transform: translateY(25%);
+        list-style: none;
+        width: auto;
+        position: fixed;
+        text-align: center;
+        li {
+            padding: 20px;
+            margin-top: 120px;
+            transform: rotate(270deg);
+            border: 1px solid #b3b7b8;
+            font-family: $title-font;
+            color: #b3b7b8;
+            cursor: pointer;
+            transition: all 200ms ease-in;
+            &:hover {
+                background-color: #b3b7b8;
+                color: #ecf1f2;
+                border: 1px solid #ecf1f2;
+            }
+        }
+        a {
+            text-decoration: none;
+        }
+    }
+    
+}
+.card-container {
     height: 100vh;
     display: grid;
-    grid-template-columns: auto auto auto auto;
+    grid-template-columns: repeat(4, auto);
     justify-content: center;
     align-items: center;
     column-gap: 50px;
     scroll-snap-align: start;
-}
-#card-zoom {
-    img {
-        width: 250px;
-        height: 400px;
-    }    
+    &:nth-child(2) {  /* second card-container */
+        grid-template-columns: auto auto;
+        grid-template-rows: auto auto;
+    }
+    .card-header {
+        font-family: $title-font;
+        font-size: 2rem;
+        color: #272727;
+    }
+    .card-header-first {
+        grid-column-start: 1;
+        grid-column-end: 5;
+        @include header-props();
+    }
+    .card-header-second {
+        @include header-props();
+
+    }
 }
 #card-cover {
     width: 100%;
@@ -46,7 +88,6 @@ body {
         width: 250px;
         height: 400px;
     }
-
     &:hover {
         cursor: pointer;
     }
@@ -70,4 +111,23 @@ body {
         font-family: $body-font;
         color: #404040;
     }
+}
+#card-zoom {
+    cursor: pointer;
+    width: 250px;
+    height: 400px;
+    overflow: hidden;
+    img {
+        width: 100%;
+        height: 100%;
+        transition: transform 300ms ease-in-out;
+    }    
+}
+#card-container-row {
+    display: flex;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    column-gap: 50px;
 }
