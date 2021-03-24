@@ -42,3 +42,13 @@
     opacity: 1;
     transform: translateX(-50px);
 }
+
+// ZOOM
+/* Zoom in */
+#card-zoom:nth-child(1):hover > img {
+    transform: scale(1.2, 1.2);
+}
+/* Zoom out */
+#card-zoom:nth-child(2):hover > img {
+    transform: scale(.8, .8);
+}
